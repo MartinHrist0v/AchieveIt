@@ -1,0 +1,70 @@
+﻿@model AchieveIt.Web.Models.ProfileInfoViewModel
+
+
+<div id="get-profile">
+    <h2>@Model.UserName <span class="badge" style="margin-left:15px; margin-bottom:30px;">@Html.DisplayFor(model => model.Votes)</span></h2>
+    @if (User.Identity.IsAuthenticated && User.Identity.Name != Model.UserName)
+    {
+        <button type="button" class="btn btn-success">Vote Up</button>
+        <button type="button" class="btn btn-danger">Vote Down</button>
+        <br />
+    }
+    <br />
+    @if (@Model.PictureUri != null)
+    {
+        <img src="data:image;base64,@Model.PictureUri" alt="Profile Picture" height="220" width="220" enctype="multipart/form-data" />
+    }
+    else
+    {
+        <img src="~/Content/Images/NoPictureImage.jpg" alt="Missing Picture" height="220" , width="220" enctype="multipart/form-data" />
+    }
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd id="username">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd id="email">
+            <span style="float:right" class="edit-field">X</span>
+            <p> @Html.DisplayFor(model => model.Email)</p>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookUrl)
+        </dt>
+
+        <dd id="facebookUrl">
+            <span style="float:right" class="edit-field">X</span>
+            <p>@Html.DisplayFor(model => model.FacebookUrl)</p>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd id="nationality">
+            <span style="float:right" class="edit-field">X</span>
+            <p>@Html.DisplayFor(model => model.Nationality)</p>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateRegisered)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateRegisered)
+        </dd>
+
+    </dl>
+    @if (this.User.Identity.Name == Model.UserName)
+    {
+        <a href="~/Profile/@Model.UserName/Edit" class="btn btn-info" role="button">Edit Profile</a>
+
+    }
+</div>
+

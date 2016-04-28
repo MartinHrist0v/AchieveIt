@@ -186,14 +186,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddPostBindingModel.cs" />
+    <Compile Include="Models\CommentViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\ProfileViewModel.cs" />
+    <Compile Include="Models\PostsViewModel.cs" />
+    <Compile Include="Models\ProfileInfoViewModel.cs" />
+    <Compile Include="Models\ProfileVewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\customStyles.css" />
+    <Content Include="Content\Images\NoPictureImage.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -247,6 +253,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Profile\GetProfile.cshtml" />
+    <Content Include="Views\Profile\_ProfileInfoView.cshtml" />
+    <Content Include="Views\Profile\_AddPostView.cshtml" />
+    <Content Include="Views\Profile\_PostsView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

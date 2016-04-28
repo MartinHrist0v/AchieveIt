@@ -19,13 +19,14 @@
             this.posts = new HashSet<Post>();
             this.comments = new HashSet<Comment>();
             this.DateRegistered = DateTime.Now;
+            
         }
        // public int ImageId { get;set ;}
         public virtual Image Image{ get; set; }
         public string FacebookUrl { get; set; }
         public string Nationality { get; set; }
         public DateTime DateRegistered { get; set; }
-
+        public int Votes { get; set; }
         public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
