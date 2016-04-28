@@ -1,0 +1,14 @@
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\AchieveIt.Models.dll.config
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\AchieveIt.Models.dll
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\AchieveIt.Models.pdb
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\EntityFramework.dll
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\EntityFramework.xml
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\obj\Debug\AchieveIt.Models.csprojResolveAssemblyReference.cache
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\obj\Debug\AchieveIt.Models.dll
+D:\User\Desktop\MVC\AchieveIt\AchieveIt\AchieveIt.Models\obj\Debug\AchieveIt.Models.pdb
