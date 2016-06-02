@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AchieveIt.Web.Models.PostsViewModel>
+
+
+@foreach (var i in Model)
+{
+    <div class="col-md-4 post" id="@i.Id">
+        @if (@i.Sender == this.User.Identity.Name)
+        {
+            <span class="glyphicon glyphicon-remove delete-post" style="float:right"></span>
+        }
+       
+        <h2>@i.Title </h2>
+        <p class="post-description">@i.Text</p>
+        @if (i.Picture != null)
+        {
+            <img src="@i.DirectorySavedPicture" alt="Profile Picture" height="220" width="220" enctype="multipart/form-data" data-toggle="modal" data-target="#myModal"/>
+        }
+        else
+        {
+            <img src="@i.Url" alt="Missing Picture" height="220" , width="220" enctype="multipart/form-data" data-toggle="modal" data-target="#myModal" />
+        }
+        <p>@Html.ActionLink(@i.Sender, "GetProfile", new {username = i.Sender}) --> @i.DateCreated</p>
+
+    </div>
+}
+
+@section scripts{
+    <script src="~/Scripts/ajax-scripts.js"></script>
+    @*<script>
+
+            $(document).ready(
+            function DeleteImage() {
+                var listsItems = $('.post>.glyphicon-remove');
+                var id = 0;
+                for (var i = 0; i < listsItems.length; i++) {
+                    listsItems[i].addEventListener("click", function (data) {
+                        id = this.id;
+
+                        $.ajax({
+                            url: 'Post/Post?id=' + id,
+                            success: function (result) {
+                                $('#post').children().remove();
+
+                                $('#post').html(result);
+
+                            }
+                        })
+                    });
+                }
+            })
+
+    </script>*@
+}

@@ -3,15 +3,18 @@
     using AchieveIt.Models;
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Web;
 
     public class AddPostBindingModel
     {
-        public string Id { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Text { get; set; }
-        [Display(Name ="URL")]
+        [Display(Name = "URL")]
+        [Url]
         public string Uri { get; set; }
-        public DateTime DateCreated { get; set; }
-        public virtual User Sender { get; set; }
+        //[FileExtensions(ErrorMessage = "Must choose .jpeg .jpg or gif file.", Extensions = "jpeg,jpg,gif,png")]
+        public HttpPostedFileBase Image { get; set; }
     }
 }

@@ -1,0 +1,19 @@
+﻿@model List<AchieveIt.Web.Models.CommentViewModel>
+ 
+
+
+    @foreach (var comment in Model)
+            {
+
+        <div id="@comment.Id">
+            @if (comment.Author == this.User.Identity.Name)
+            {
+                <span class="glyphicon glyphicon-remove" style="float:right"></span>
+            }
+            <p>@comment.Text </p>
+            <br /><span> Author: @comment.Author</span>
+            <br /> <span>Rate : @comment.Vote</span>
+            <span> Date Stamp : @comment.DateCreated</span>
+        </div>
+
+    }

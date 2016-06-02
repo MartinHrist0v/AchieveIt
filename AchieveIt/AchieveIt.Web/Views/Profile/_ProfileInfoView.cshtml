@@ -2,7 +2,7 @@
 
 
 <div id="get-profile">
-    <h2>@Model.UserName <span class="badge" style="margin-left:15px; margin-bottom:30px;">@Html.DisplayFor(model => model.Votes)</span></h2>
+    <h2> <span class="glyphicon glyphicon-user small"></span> @Model.UserName <span class="badge" style="margin-left:15px; margin-bottom:30px;">@Html.DisplayFor(model => model.Votes)</span></h2>
     @if (User.Identity.IsAuthenticated && User.Identity.Name != Model.UserName)
     {
         <button type="button" class="btn btn-success">Vote Up</button>
@@ -10,14 +10,27 @@
         <br />
     }
     <br />
+    <div id="profile-picture-section">
     @if (@Model.PictureUri != null)
     {
-        <img src="data:image;base64,@Model.PictureUri" alt="Profile Picture" height="220" width="220" enctype="multipart/form-data" />
+        <img src="data:image;base64,@Model.PictureUri" alt="Profile Picture" height="220" width="220" enctype="multipart/form-data"  />
+        <span id="profile-picture-edit"></span>
     }
     else
     {
         <img src="~/Content/Images/NoPictureImage.jpg" alt="Missing Picture" height="220" , width="220" enctype="multipart/form-data" />
+        <span id="profile-picture-edit"></span>
     }
+        
+       *@*<label for="file-input">
+            <span class="glyphicon glyphicon-edit"></span>
+        </label>
+@using (Html.BeginForm("AddPost", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.TextBoxFor(Model => Model.DateRegisered, new { type = "file", id = "file-input", accept = "image/*"  })
+}
+        <input id="file-input" type="file" />*@
+    </div>
     <hr />
     <dl>
         <dt>
@@ -33,7 +46,7 @@
         </dt>
 
         <dd id="email">
-            <span style="float:right" class="edit-field">X</span>
+            <span style="float:right" class="glyphicon glyphicon-remove"></span>
             <p> @Html.DisplayFor(model => model.Email)</p>
         </dd>
         <dt>
@@ -41,7 +54,7 @@
         </dt>
 
         <dd id="facebookUrl">
-            <span style="float:right" class="edit-field">X</span>
+            <span style="float:right" class="glyphicon glyphicon-remove"></span>
             <p>@Html.DisplayFor(model => model.FacebookUrl)</p>
         </dd>
 
@@ -50,7 +63,7 @@
         </dt>
 
         <dd id="nationality">
-            <span style="float:right" class="edit-field">X</span>
+            <span style="float:right;" class="glyphicon glyphicon-remove"></span>
             <p>@Html.DisplayFor(model => model.Nationality)</p>
         </dd>
         <dt>
@@ -68,3 +81,15 @@
     }
 </div>
 
+@*<script>
+    $(".glyphicon glyphicon-remove").hover(function () {
+        $(".glyphicon glyphicon-remove").css("color","red");
+    })();
+
+    $("#profile-picture-section").mouseover(function () {
+        $("#profile-picture-edit").addClass("glyphicon glyphicon-edit");
+    })
+    $("#profile-picture-section").mouseout(function () {
+        $("#profile-picture-edit").remove('.glyphicon glyphicon-remove');
+    })
+</script>*@

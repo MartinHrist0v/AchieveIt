@@ -1,0 +1,72 @@
+﻿@model AchieveIt.Web.Models.PostsViewModel
+
+<div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"> @Model.Title  </h4>
+            <h5>@Model.Text</h5>
+        </div>
+        <div class="modal-body" id="post-image">
+            @if (@Model.DirectorySavedPicture != "Null")
+            {
+                <img src="@Model.DirectorySavedPicture" alt="Profile Picture" enctype="multipart/form-data" />
+            }
+            else
+            {
+                <img src="@Model.Url" alt="Post Picture" />
+            }
+            <div id="comments-area">
+                @using (Ajax.BeginForm("AddComment", "Post", new AjaxOptions
+                {
+                    HttpMethod = "Post",
+                    UpdateTargetId = "comments",
+                    InsertionMode = InsertionMode.InsertBefore,
+
+                    //   OnSuccess = "clearInputs()",
+
+                }))
+                {
+                    <div class="form-group has-success" id="comment-input">
+                        <label for="textArea" class="control-label">Add a comment</label>
+
+                        <textarea class="form-control" rows="4" cols="50" id="textArea" placeholder="Place your comment here ..." name="comment"></textarea>
+                        <input type="number" placeholder="@Model.Id" value="@Model.Id" name="id" hidden="hidden" />
+                        <input type="submit" value="Comment it" class="btn btn-success btn-xs" />
+
+                        <hr />
+                    </div>
+                }
+
+                <div id="comments" class="wrapper ps-container ps-active-y">
+                    @if (Model.Comments.Any())
+                    {
+
+                        @Html.Partial("_CommentsView", Model.Comments)
+
+                    }
+                    else
+                    {
+
+                        <div class="alert alert-dismissible alert-info" style="width:300px;">
+                            <strong>Be the first who comment this post</strong>
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <br />
+            <input type="button" value="Vote Up" class="btn btn-success btn-xs" />
+            <input type="button" value="Vote Down" class="btn btn-danger btn-xs" />
+
+
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+</div>

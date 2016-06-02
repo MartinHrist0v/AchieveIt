@@ -1,0 +1,32 @@
+﻿@model AchieveIt.Web.Models.ProfileVewModel
+@{
+    ViewBag.Title = "GetProfileView";
+}
+@Styles.Render("~/Content/customStyles.css")
+
+@Html.Partial("_ProfileInfoView", this.Model.ProfileInfo)
+@if (User.Identity.Name == Model.ProfileInfo.UserName)
+{
+    @Html.Partial("_AddPostView", this.Model.AddPost)
+}
+<div id="posts">
+    @Html.Partial("_PostsView", this.Model.Posts)
+</div>
+<div class="modal fade" id="myModal" role="dialog" >
+    <div id="post"></div>
+ </div>
+@*@using (Ajax.BeginForm("", "", new AjaxOptions {
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.InsertAfter;
+}))
+{
+
+}*@
+
+@*@Html.ActionLink("View more posts", "LoadMorePosts","Post",null, new { id = "view-more-posts"})*@
+<p id="view-more-posts"> Load more posts </p>
+
+@*<a href="#" id="view-more-posts">Load More Posts</a>*@
+    @section scripts{
+    <script src="~/Scripts/ajax-scripts.js"></script>    
+    }
