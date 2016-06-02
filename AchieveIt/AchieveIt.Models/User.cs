@@ -26,6 +26,7 @@
         public string FacebookUrl { get; set; }
         public string Nationality { get; set; }
         public DateTime DateRegistered { get; set; }
+        public string DirectorySavedPicture { get; set; }
         public int Votes { get; set; }
         public virtual ICollection<Comment> Comments
         {

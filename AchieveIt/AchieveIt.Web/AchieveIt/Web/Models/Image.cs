@@ -2,10 +2,6 @@
 {
     internal class Image
     {
-        public Image()
-        {
-        }
-
         public string Extention { get; set; }
         public string FileName { get; set; }
         public byte[] ImageData { get; set; }
